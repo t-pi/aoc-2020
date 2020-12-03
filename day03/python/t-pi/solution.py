@@ -20,23 +20,22 @@ def run_course(terrain_list, right, down):
         Prints out result and returns trees hit.'''
     position = 0
     tree_count = 0
-    for line_nr, line in enumerate(terrain_list):
-        if (line_nr % down != 0): continue
+    for line in terrain_list[::down]:
         if check_treechecks(line, position):
             tree_count += 1
         position = (position + right) % (len(line)-1)
-    #print("Trees hit @R{}D{}: {}".format(right, down, tree_count))
     print(f"Trees hit @R{right}D{down}: {tree_count}")
     return tree_count
 
-daily_list = read_daily_input('input03.txt')
-courses = [[1,1], [3,1], [5,1], [7,1], [1,2]]
-results = list()
+def main():
+    daily_list = read_daily_input('input03.txt')
+    courses = [(1,1), (3,1), (5,1), (7,1), (1,2)]
+    results = list()
 
-for course in courses:
-    results.append(run_course(daily_list, course[0], course[1]))
+    for course in courses:
+        results.append(run_course(daily_list, course[0], course[1]))
 
-print(f"Puzzle result: {math.prod(results)}")
+    print(f"Puzzle result: {math.prod(results)}")
 
-
-
+if __name__ == "__main__":
+    main()

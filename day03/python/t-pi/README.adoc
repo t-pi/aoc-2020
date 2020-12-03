@@ -1,4 +1,5 @@
-== Day 03
+== AOC202 Day 03
+https://adventofcode.com/2020/day/3
 
 === Info
 
@@ -8,7 +9,8 @@ Day 03 of 2020 AoC: Ride the slide through hashy terrain with a twisted tobbogan
 
 Data is read from the file 'input03.txt' line by line to create a modulo terrain map (list of lists). 
 
-Star1: How many trees are hit? Toboggan slides down 1 and 3 right.
+Star1: How many trees are hit? Toboggan slides down 1 and 3 right. Check position modulo terrain tile width.
+
 Star2: How many trees are hit? Toboggan errs along different paths. Multiply trees hit.
 
 [source, python]
